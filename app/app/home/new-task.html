@@ -1,0 +1,29 @@
+<div class="container well">
+	<div>
+		<h2>Task</h2>
+	</div>
+<form style="padding: 10px;">
+	<div class="row" style="padding: 5px;">
+		<div class="col-md-6">
+			<label>Title:</label>
+			<input type="text" class="form-control" placeholder="Title.." ng-model="task.title" required autofocus="">
+		</div>
+		<div class="col-md-6">
+			<label>Status:</label>
+			<select class="form-control" ng-model="task.status" ng-options="status as status.name for status in view.statuses track by status.id">
+				<option style="display: none" value=""></option>
+			</select>
+		</div>
+	</div>
+	<div class="row" style="padding: 5px;">
+		<div class="col-md-12">
+			<label>Description:</label>	
+			<textarea style="width: 100%; height: 350px; resize: none;" ng-model="task.description"></textarea>
+		</div>
+	</div>
+	<div class="row" style="padding: 5px; float: right">
+		<button class="btn btn-primary" type="submit"  ng-click="save()">Save</button>
+	</div>
+	
+</form>
+</div>
